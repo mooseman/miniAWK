@@ -1,0 +1,14 @@
+
+
+END{print "hi there"}
+
+/moose/{ print ;}
+
+sum = sum + $2;
+
+ 
+
+
+
+
+
