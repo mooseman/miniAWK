@@ -1,0 +1,30 @@
+
+ ***  README - miniAWK *** 
+
+Last update - 1st Mar 2018.  
+
+Status - making good progress with grammar. 
+Not yet working. 
+
+
+A small version of the AWK utility. 
+
+I've decided to go with ANTLR4 to create this. 
+It will make things a lot easier.   
+
+Acknowledgement - A big "thanks" to Github user "mateiw" - 
+he write the "littlebasic" language from which I grabbed 
+some of the ANTLR grammar for miniAWK and miniFPL. 
+Thanks for writing that, mateiw, and for releasing it as 
+"public domain"!  
+ 
+miniAWK is (of course) "public domain".   
+"Share and enjoy".......  :)  
+
+
+- mooseman 
+ 
+
+
+ 
+
