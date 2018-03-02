@@ -1,13 +1,12 @@
 grammar miniAWK;
-import miniAWKExpression, miniAWKTokens;
+import miniAWKTokens;
 
 prog: (block)+ EOF;
 
 block
     :  begin_block 
     |  stmt_block
-    |  end_block 
-    |  /* empty */ 
+    |  end_block   
 ;
 
 begin_block 
@@ -19,24 +18,37 @@ stmt_block
 ;
 
 stmt
-    :  if_stmt 
-    |  while_stmt
-    |  for_stmt 
-    |  for_array_stmt 
-    |  break_stmt
-    |  continue_stmt 
-    |  assignment 
-    |  comment 
-    |  func_call 
-    |  func_defn
-    |  print_stmt 
-    |  printf_stmt 
-    |  next_stmt 
-    |  exit_stmt 
+    : string                                    
+    | number                                    
+    | id                                        
+    | field     
 ;    
 
+string
+    : STRINGLITERAL
+    ;
+
+number
+    : NUMBER
+    ;
+
+id
+    : ID
+    ;
+
+field 
+    : '$' number
+    ; 
+
+STRINGLITERAL   : '"' ~ ["\r\n]* '"' ;
+
+NUMBER          : [0-9]+ ('.' [0-9]+)? ;   
+
+ID              : [a-zA-Z_] [a-zA-Z_0-9]+ ;  
+
+
 end_block 
-    :  END '{' (statement)+  '}' 
+    :  END '{' (stmt)+  '}' 
 ; 
 
 

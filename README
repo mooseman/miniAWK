@@ -1,10 +1,25 @@
 
  ***  README - miniAWK *** 
 
-Last update - 1st Mar 2018.  
+Last update - 3rd Mar 2018.  
 
-Status - making good progress with grammar. 
-Not yet working. 
+Status - Cut the grammar back to the absolute minimum. 
+Not running as yet. 
+
+***************************
+To compile -  
+
+$ antlr4 miniAWK.g4
+
+$ javac miniAWK*.java
+
+$ grun Hello r -gui 
+
+ ( Enter a few commands ) 
+
+^D  
+
+***************************
 
 
 A small version of the AWK utility. 
