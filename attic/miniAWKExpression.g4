@@ -9,26 +9,26 @@ stmt
     ;
 
 expression
-    : string                                    
-    | number                                    
-    | id                                        
-    | field                                     
-    | builtin                                   
-    | func                                      
-    | comment                                   
-    | if_expr                                   
-    | while_expr                                
-    | for_expr                                  
-    | for_array_expr                            
-    | break_expr                                
-    | continue                                  
-    | assignment                                
-    | print_expr                                
-    | output_expr                               
-    | next_expr                                 
-    | exit                                      
-    | arith_expr                                
-    | compar_expr                               
+    : string                                    # StringExpr
+    | number                                    # NumberExpr   
+    | id                                        # IdExpr
+    | field                                     # FieldReference
+    | builtin                                   # BuiltInVariables 
+    | func                                      # FuncExpr
+    | comment                                   # Comment 
+    | if_expr                                   # IfExpr
+    | while_expr                                # WhileExpr
+    | for_expr                                  # ForExpr 
+    | for_array_expr                            # ForArrayExpr 
+    | break_expr                                # Break 
+    | continue                                  # Continue 
+    | assignment                                # Assignment (Ordinary and augmented)
+    | print_expr                                # Print and printf 
+    | output_expr                               # Output -  >, >>, | 
+    | next_expr                                 # Next 
+    | exit                                      # Exit   
+    | arith_expr                                # ArithmeticExpr
+    | compar_expr                               # ComparisonExpr
     ;
 
 string
@@ -160,15 +160,8 @@ arg_list
     ; 
 
 comment 
-    :  comment_start comment_rest EOL 
+    :  # (char)*  EOL 
     ;  
 
-comment_start
-    :  '#'  
-    ; 
-
-comment_rest 
-    :  ( ANY )*
-    ; 
-
   
+    

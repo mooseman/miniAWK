@@ -44,7 +44,7 @@ EXIT    : 'EXIT' | 'exit' ;
 FOR     : 'FOR' | 'for' ;
 FUNCTION : 'FUNCTION' | 'function' ; 
 FUNC     : 'FUNC'     | 'func' ;  
-GETLINE :  'GETLINE' | 'getline' ;  
+GETLINE :  'GETLINE' | 'getline'  
 IF      : 'IF' | 'if' ;
 IN      : 'IN' | 'in' ;
 NEXT    : 'NEXT' | 'next' ; 
@@ -53,20 +53,15 @@ SWITCH  : 'SWITCH' | 'switch' ;
 WHILE   : 'WHILE' | 'while' ;
 
 // comments
-COMMENT : '#' ~[\r\n]* ;
+COMMENT : # ~[\r\n]* ;
 
 // literals
-ANY             : LETTER | DIGIT | PUNCT | WS ;
-LETTER          : [a-zA-Z] ;
-DIGIT           : [0-9] ; 
-PUNCT           : [~!@#$%^&*()_-+=|\"'?/<,>.`]  ;
-WS              : [ \t]+ -> skip ; // toss out whitespace
 ID              : [a-zA-Z]+ ;  // match identifiers
-NUMBER          : [0-9]+ ('.' [0-9]+)? ;   // match integers
+NUMBER          : [0-9]+ ('.' [0-9]+)?;   // match integers
 STRINGLITERAL   : '"' ~ ["\r\n]* '"' ;
 DOLLAR          : '$' ;
 NEWLINE         :'\r'? '\n' ;  // return newlines to parser (end-statement signal)
-
+WS              : [ \t]+ -> skip ; // toss out whitespace
 //NUMBER
 //    : ('0' .. '9') + (('e' | 'E') NUMBER)*
 //    ; 
