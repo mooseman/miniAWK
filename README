@@ -7,17 +7,23 @@ Status - Cut the grammar back to the absolute minimum.
 Not running as yet. 
 
 ***************************
-To compile -  
+To compile - enter the miniAWK directory and 
+type these commands -   
 
 $ antlr4 miniAWK.g4
 
 $ javac miniAWK*.java
 
-$ grun Hello r -gui 
+$ grun miniAWK block -gui 
 
- ( Enter a few commands - NOT WORKING AS YET ) 
+( You might get a warning here -  
+"Warning: TestRig moved to org.antlr.v4.gui.TestRig; calling automatically"  
+Ignore it. )  
 
-^D  
+Enter a command ( NOT WORKING AS YET ) 
+
+Press ENTER then Ctrl-D. The Parse Tree Inspector should appear.  
+
 
 ***************************
 
